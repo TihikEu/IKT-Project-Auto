@@ -17,44 +17,64 @@ class Auto:
     def __str__(self):
         return f"{self.__marka} {self.__tipus} {self.__loero}"
 
-#Adat ellenorzes SZOVEGES
 def adatVaneSzoveg():
     while True:
-        a = input()
+        a = input("\t| : ")
         if len(a) == 0:
-            print("\tHIBAS")
+            print("\tHIBA: Üresen hagyta a mezőt!")
         else:
             try:
-                b = float(a)
-                if b.is_integer():
-                    print("\tHIBAS")  
+                b = int(a)
+                print("\tHIBA: Az adat nem lehet szám!")
             except ValueError:
-                print(f"\tElfogadva | {a} |")  
-                return a
+                try:
+                    b = float(a)
+                    print("\tHIBA: Az adat nem lehet szám!") 
+                except ValueError:
+                    return a
 
-#Adat ellenorzes SZAMOS
 def adatVaneSzam():
     while True:
-        a = input()
+        a = input("\t| : ")
         if len(a) == 0:
-            print("\tHIBAS")
+            print("\tHIBA: Üresen hagyta a mezőt!")
         else:
             try:
-                b = float(a)  
-                if b.is_integer():
-                    if b < 0 or b > 2000:
-                        print("\tHIBAS")
-                    else:
-                        print(f"\tElfogadva | {int(a)} |") 
-                        return int(a)
+                b = int(a)  
+                if b <= 0 or b > 2000:
+                    print("\tHIBA: Az intervallum (1 - 2000)!")
                 else:
-                    print("\tHIBAS")
+                    return b
             except ValueError:
-                print("\tHIBAS")
+                try:
+                    b = float(a)
+                    print("\tHIBA: Az adatnak egesz szamnak kell lennie!") 
+                except ValueError:
+                    print("\nHIBA: Az adatnak szamnak kell lennie!")
 
-#
-auto_adat = []
+def adatKiiratas():
+    lista = []
+    with open("autok.txt", "r", encoding="utf-8") as fajl:
+        for sor in fajl:
+            reszek = sor.strip()
+            lista.append(reszek)
+    return lista
 
+def minLoero(tomb):
+    minimum = tomb[0]
+    for i in range(1, len(tomb)):
+        if tomb[i].getLoero() < minimum.getLoero():
+            minimum = tomb[i]
+    return f"Min: {minimum.getMarka()} {minimum.getTipus()} | {minimum.getLoero()} |"
+
+def maxLoero(tomb):
+    maximum = tomb[0]
+    for a in tomb:
+        if a.getLoero() > maximum.getLoero():
+            maximum = a
+    return f"Max: {maximum.getMarka()} {maximum.getTipus()} | {maximum.getLoero()} |"
+
+autok = []
 with open('autok.txt', 'r', encoding='utf-8') as fajl:
     for sor in fajl:
         reszek = sor.strip().split(" ")
@@ -69,44 +89,44 @@ with open('autok.txt', 'r', encoding='utf-8') as fajl:
             tipus = reszek[1]
             loreo = int(reszek[-1])
 
-        auto_adat.append(Auto(marka, tipus, loreo))
+        autok.append(Auto(marka, tipus, loreo))
 
 print("\nA(z) 'autok.txt' fajl:\n")
-for a in auto_adat:
+for a in adatKiiratas():
     print(f"\t{a}")
 
-#
 vege = False
+darab = len(autok)
 db = 1
+print(f"\nAdjon meg adatokat:| Marka - Tipus - Loero ( 1 - 2000 ) |\nHa a 'Marka' helyere 'VÉGE' szöveget adja meg, akkor a bevitel leáll!")
 while not vege:
-    print(f"\n{db}. Auto:\n\tMarka:", end=" ")
+    print(f"\n{db}. Auto:\n")
     marka = adatVaneSzoveg()
-    if marka.upper() == "VEGE":
+    if marka.upper() == "VÉGE":
         vege = True
     else:
-        print("\tTipus: ", end=" ")
+        print(f"\tElfogadva: | {marka} |")
         tipus = adatVaneSzoveg()
-        print("\tLoero: ", end=" ")
+        print(f"\tElfogadva: | {tipus} |")
         loero = adatVaneSzam()
+        print(f"\tElfogadva: | {loero} |")
     
         adat = Auto(marka, tipus, loero)
-        auto_adat.append(adat)
+        autok.append(adat)
         db += 1
         with open('autok.txt', 'a', encoding='utf-8') as fajl:
-            fajl.write(f"{adat}")
+            fajl.write(f"\n{adat}")
 
-print("\nA(z) 'autok.txt' fajl:\n")
-for a in auto_adat:
-    print(f"\t{a}")
+if len(autok) > darab:
+    print("\nA frissitett 'autok.txt' fajl:\n")
+    for a in adatKiiratas():
+        print(f"\t{a}")
+else:
+    print("\nA 'autok.txt' fajlban nem tortent adat frissites!\n")
+    for a in adatKiiratas():
+        print(f"\t{a}")
 
-#
-maximum = auto_adat[0]
-for a in auto_adat:
-    if a.getLoero() > maximum.getLoero():
-        maximum = a
-        
-print(f"\nMax: {maximum.getMarka()} - {maximum.getTipus()} | {maximum.getLoero()} |")
+print(f"\n{maxLoero(autok)}\n{minLoero(autok)}")
 
-#
 with open('legerosebb_auto.txt', 'w', encoding='utf-8') as fajl:
-    fajl.write(f"{maximum.getMarka()} - {maximum.getTipus()} | {maximum.getLoero()} |")
+    fajl.write(f"{maxLoero(autok)}\n{minLoero(autok)}")
