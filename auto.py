@@ -50,7 +50,7 @@ def adatVaneSzam():
                     b = float(a)
                     print("\tHIBA: Az adatnak egesz szamnak kell lennie!") 
                 except ValueError:
-                    print("\nHIBA: Az adatnak szamnak kell lennie!")
+                    print("\tHIBA: Az adatnak szamnak kell lennie!")
 
 def adatKiiratas():
     lista = []
