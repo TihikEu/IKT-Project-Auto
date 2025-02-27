@@ -1,17 +1,8 @@
 class Auto:
 
     def __init__(self, marka, tipus, loero):
-        self.marka = marka
-        self.tipus = tipus
-        self.loero = loero
-    
-    def setMarka(self, marka):
         self.__marka = marka
-    
-    def setTipus(self, tipus):
         self.__tipus = tipus
-    
-    def setLoero(self, loero):
         self.__loero = loero
 
     def getMarka(self):
@@ -24,41 +15,61 @@ class Auto:
         return self.__loero
     
     def __str__(self):
-        return f"Marka: {self.__marka}, Tipus: {self.__tipus}, Loero: {self.__loero}"
+        return f"{self.__marka} {self.__tipus} {self.__loero}"
 
+#Adat ellenorzes SZOVEGES
 def adatVaneSzoveg():
     while True:
-        a = input("Adat: ")
+        a = input()
         if len(a) == 0:
-            print("Hibas adat!")
+            print("\tHIBAS")
         else:
             try:
                 b = float(a)
                 if b.is_integer():
-                    print("Hibas adat")  
+                    print("\tHIBAS")  
             except ValueError:
-                print(f"Elfogadva | {a} |")  
+                print(f"\tElfogadva | {a} |")  
                 return a
-    
+
+#Adat ellenorzes SZAMOS
 def adatVaneSzam():
     while True:
-        a = input("Adat: ")
+        a = input()
         if len(a) == 0:
-            print("Hibas adat!")
+            print("\tHIBAS")
         else:
             try:
                 b = float(a)  
                 if b.is_integer():
                     if b < 0 or b > 2000:
-                        print("Hibas adat")
+                        print("\tHIBAS")
                     else:
-                        print(f"Elfogadva | {int(a)} |") 
+                        print(f"\tElfogadva | {int(a)} |") 
                         return int(a)
                 else:
-                    print("Hibas adat")
+                    print("\tHIBAS")
             except ValueError:
-                print("Hibas adat")
-                
-marka = adatVaneSzoveg()
-tipus = adatVaneSzoveg()
-loero = adatVaneSzam()
+                print("\tHIBAS")
+
+#Adat bekeres
+lista = []
+
+for i in range(1, 4):
+    print(f"{i}. Auto:\n\tMarka:", end=" ")
+    marka = adatVaneSzoveg()
+    print("\tTipus: ", end=" ")
+    tipus = adatVaneSzoveg()
+    print("\tLoero: ", end=" ")
+    loero = adatVaneSzam()
+    
+    adat = Auto(marka, tipus, loero)
+    lista.append(adat)
+
+#Maximum
+maximum = lista[0]
+for a in lista:
+    if a.getLoero() > maximum.getLoero():
+        maximum = a
+        
+print(f"Max: {maximum.getMarka()} - {maximum.getTipus()} | {maximum.getLoero()} |")
