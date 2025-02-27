@@ -52,24 +52,61 @@ def adatVaneSzam():
             except ValueError:
                 print("\tHIBAS")
 
-#Adat bekeres
-lista = []
+#
+auto_adat = []
 
-for i in range(1, 4):
-    print(f"{i}. Auto:\n\tMarka:", end=" ")
+with open('autok.txt', 'r', encoding='utf-8') as fajl:
+    for sor in fajl:
+        reszek = sor.strip().split(" ")
+        if len(reszek) % 2 == 0:
+            marka = reszek[0]
+            tipus = ""
+            for i in range(1, len(reszek)-2):
+                tipus += f" {reszek[i]}"
+            loreo = int(reszek[-1])
+        else:
+            marka = reszek[0]
+            tipus = reszek[1]
+            loreo = int(reszek[-1])
+
+        auto_adat.append(Auto(marka, tipus, loreo))
+
+print("\nA(z) 'autok.txt' fajl:\n")
+for a in auto_adat:
+    print(f"\t{a}")
+
+#
+vege = False
+db = 1
+while not vege:
+    print(f"\n{db}. Auto:\n\tMarka:", end=" ")
     marka = adatVaneSzoveg()
-    print("\tTipus: ", end=" ")
-    tipus = adatVaneSzoveg()
-    print("\tLoero: ", end=" ")
-    loero = adatVaneSzam()
+    if marka.upper() == "VEGE":
+        vege = True
+    else:
+        print("\tTipus: ", end=" ")
+        tipus = adatVaneSzoveg()
+        print("\tLoero: ", end=" ")
+        loero = adatVaneSzam()
     
-    adat = Auto(marka, tipus, loero)
-    lista.append(adat)
+        adat = Auto(marka, tipus, loero)
+        auto_adat.append(adat)
+        db += 1
+        with open('autok.txt', 'a', encoding='utf-8') as fajl:
+            fajl.write(f"{adat}")
 
-#Maximum
-maximum = lista[0]
-for a in lista:
+print("\nA(z) 'autok.txt' fajl:\n")
+for a in auto_adat:
+    print(f"\t{a}")
+
+#
+maximum = auto_adat[0]
+for a in auto_adat:
     if a.getLoero() > maximum.getLoero():
         maximum = a
         
-print(f"Max: {maximum.getMarka()} - {maximum.getTipus()} | {maximum.getLoero()} |")
+print(f"\nMax: {maximum.getMarka()} - {maximum.getTipus()} | {maximum.getLoero()} |")
+
+#
+with open('legerosebb_auto.txt', 'w', encoding='utf-8') as fajl:
+    fajl.write(f"{maximum.getMarka()} - {maximum.getTipus()} | {maximum.getLoero()} |")
