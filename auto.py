@@ -19,7 +19,7 @@ class Auto:
 
 def adatVaneSzoveg():
     while True:
-        a = input("\t| : ")
+        a = input("\t| : ").strip()
         if len(a) == 0:
             print("\tHIBA: Üresen hagyta a mezőt!")
         else:
@@ -35,7 +35,7 @@ def adatVaneSzoveg():
 
 def adatVaneSzam():
     while True:
-        a = input("\t| : ")
+        a = input("\t| : ").strip()
         if len(a) == 0:
             print("\tHIBA: Üresen hagyta a mezőt!")
         else:
