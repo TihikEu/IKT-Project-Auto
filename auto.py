@@ -62,9 +62,9 @@ def adatKiiratas():
 
 def minLoero(tomb):
     minimum = tomb[0]
-    for i in range(1, len(tomb)):
-        if tomb[i].getLoero() < minimum.getLoero():
-            minimum = tomb[i]
+    for a in tomb:
+        if a.getLoero() < minimum.getLoero():
+            minimum = a
     return f"Min: {minimum.getMarka()} {minimum.getTipus()} | {minimum.getLoero()} |"
 
 def maxLoero(tomb):
