@@ -60,19 +60,15 @@ def adatKiiratas():
             lista.append(reszek)
     return lista
 
-def minLoero(tomb):
-    minimum = tomb[0]
-    for a in tomb:
-        if a.getLoero() < minimum.getLoero():
-            minimum = a
-    return f"Min: {minimum.getMarka()} {minimum.getTipus()} | {minimum.getLoero()} |"
-
-def maxLoero(tomb):
+def MaxMinLoero(tomb):
     maximum = tomb[0]
+    minimum = tomb[0]
     for a in tomb:
         if a.getLoero() > maximum.getLoero():
             maximum = a
-    return f"Max: {maximum.getMarka()} {maximum.getTipus()} | {maximum.getLoero()} |"
+        elif a.getLoero() < minimum.getLoero():
+            minimum = a
+    return f"Max: {maximum.getMarka()} {maximum.getTipus()} | {maximum.getLoero()} |\nMin: {minimum.getMarka()} {minimum.getTipus()} | {minimum.getLoero()} |"
 
 autok = []
 with open('autok.txt', 'r', encoding='utf-8') as fajl:
@@ -126,7 +122,7 @@ else:
     for a in adatKiiratas():
         print(f"\t{a}")
 
-print(f"\n{maxLoero(autok)}\n{minLoero(autok)}")
+print(f"\n{MaxMinLoero(autok)}")
 
 with open('legerosebb_auto.txt', 'w', encoding='utf-8') as fajl:
-    fajl.write(f"{maxLoero(autok)}\n{minLoero(autok)}")
+    fajl.write(f"{MaxMinLoero(autok)}")
