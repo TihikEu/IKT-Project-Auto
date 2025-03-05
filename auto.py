@@ -74,7 +74,7 @@ autok = []
 with open('autok.txt', 'r', encoding='utf-8') as fajl:
     for sor in fajl:
         reszek = sor.strip().split(" ")
-        if len(reszek) % 2 == 0:
+        if len(reszek) > 3:
             marka = reszek[0]
             tipus = ""
             for i in range(1, len(reszek)-2):
