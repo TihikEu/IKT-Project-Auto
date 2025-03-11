@@ -29,7 +29,7 @@ def adatVaneSzoveg():
             except ValueError:
                 try:
                     b = float(a)
-                    print("\tHIBA: Az adat nem lehet szám!") 
+                    print("\tHIBA: Az adat nem lehet szám!")
                 except ValueError:
                     return a
 
@@ -48,9 +48,29 @@ def adatVaneSzam():
             except ValueError:
                 try:
                     b = float(a)
-                    print("\tHIBA: Az adatnak egesz szamnak kell lennie!") 
+                    print("\tHIBA: Az adatnak egesz szamnak kell lennie!")
                 except ValueError:
                     print("\tHIBA: Az adatnak szamnak kell lennie!")
+
+def beolvas():
+    lista = []
+    with open('autok.txt', 'r', encoding='utf-8') as fajl:
+        for sor in fajl:
+            reszek = sor.strip().split(" ")
+            if len(reszek) > 3:
+                marka = reszek[0]
+                tipus = ""
+                for i in range(1, len(reszek)-2):
+                    tipus += f" {reszek[i]}"
+                loreo = int(reszek[-1])
+            else:
+                marka = reszek[0]
+                tipus = reszek[1]
+                loreo = int(reszek[-1])
+
+            lista.append(Auto(marka, tipus, loreo))
+
+    return lista
 
 def adatKiiratas():
     lista = []
@@ -71,21 +91,7 @@ def MaxMinLoero(tomb):
     return f"Max: {maximum.getMarka()} {maximum.getTipus()} | {maximum.getLoero()} |\nMin: {minimum.getMarka()} {minimum.getTipus()} | {minimum.getLoero()} |"
 
 autok = []
-with open('autok.txt', 'r', encoding='utf-8') as fajl:
-    for sor in fajl:
-        reszek = sor.strip().split(" ")
-        if len(reszek) > 3:
-            marka = reszek[0]
-            tipus = ""
-            for i in range(1, len(reszek)-2):
-                tipus += f" {reszek[i]}"
-            loreo = int(reszek[-1])
-        else:
-            marka = reszek[0]
-            tipus = reszek[1]
-            loreo = int(reszek[-1])
-
-        autok.append(Auto(marka, tipus, loreo))
+autok = beolvas()
 
 print("\nA(z) 'autok.txt' fajl:\n")
 for a in adatKiiratas():
