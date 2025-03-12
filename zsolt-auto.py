@@ -34,3 +34,16 @@ def beolvas():
                 a=Auto(reszek[0], reszek[1], int(reszek[2]))
             lista.append(a)
     return lista
+
+lista=[]
+lista=beolvas() 
+
+maxi=mini=lista[0].getLoero()
+maxin=minin=lista[0].getMarka()
+maxit=minit=lista[0].getTipus()
+
+for i in lista:
+    if i.getLoero() > maxi:
+        maxi=i.getLoero()
+        maxin=i.getMarka()
+        maxit=i.getTipus()
