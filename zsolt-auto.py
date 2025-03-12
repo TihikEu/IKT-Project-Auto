@@ -47,3 +47,14 @@ for i in lista:
         maxi=i.getLoero()
         maxin=i.getMarka()
         maxit=i.getTipus()
+
+for i in range(1,4):
+    an=input("Add meg az autó nevét: ")
+    if szovegE(an):
+        ati=input(f"Add meg a(z) {an} autó tipusát: ")
+        al=input(f"Add meg a(z) {an} lóerejét: ")
+        if not szovegE(al):
+            adat=Auto(an, ati, al)
+        maxi=i.getLoero()
+        maxin=i.getMarka()
+        maxit=i.getTipus()
