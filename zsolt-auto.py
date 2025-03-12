@@ -72,3 +72,17 @@ for i in range(1,4):
     else: 
         print("Csak szöveget adhatsz meg.")
 
+print("A programból a /\ VÉGE /\ parancsal tud ki lépni.")
+an=" "
+
+while vege(an):
+    an=input("Add meg az autó nevét: ")
+    if szovegE(an):
+        if not vege(an):
+            print("viszlát")
+        else:
+            ati=input(f"Add meg a(z) {an} autó tipusát: ")
+            al=input(f"Add meg a(z) {an} lóerejét: ")
+            if not szovegE(al):
+                adat=Auto(an, ati, al)
+
