@@ -85,4 +85,19 @@ while vege(an):
             al=input(f"Add meg a(z) {an} lóerejét: ")
             if not szovegE(al):
                 adat=Auto(an, ati, al)
+                if int(maxi) < int(al):
+                    maxi=al
+                    maxin=an
+                    maxit=ati
+                if int(mini) > int(al):
+                    mini=al
+                    minin=an
+                    minit=ati
+                hozzaad(an,ati,al)
+            else:
+                print("A lóerő csak pozitív egész szám lehet.")
+    elif an=="VÉGE":
+        print()
+    else:
+        print("Csak szöveget adhatsz meg.")
 
