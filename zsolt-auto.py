@@ -100,4 +100,7 @@ while vege(an):
         print()
     else:
         print("Csak szöveget adhatsz meg.")
-
+        
+with open('legerosebb_auto.txt', 'a', encoding='utf-8') as fajl:
+    print(maxin,maxit,maxi, file=fajl)
+    print(minin,minit,mini, file=fajl)
