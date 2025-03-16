@@ -11,248 +11,124 @@
         <title>E-Motion - Home</title>
     </head>
     <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo logo1">
+                    E-Motion
+                </a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                About
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#popular" class="nav__link">
+                                Popular
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#featured" class="nav__link">
+                                Featured
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="account.html" target="_blank" class="nav__link">
+                                Account 
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+                <div class="nav__cart-1 cart">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <div id="cart-icon">
+                                <i class="ri-shopping-cart-2-line"></i>
+                            </div>
+                            <span id="cart-count">0</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="nav__logo logo2">
+                    E-Motion
+                </a>
+                <div class="nav__toggle cart">
+                    <ul class="toggle__ul">
+                        <li>
+                            <i class="ri-menu-line" id="nav-toggle"></i>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div id="cart-container">
+            <div class="cart__close">
+                <h2>Cart</h2>
+                <i id="close-cart" class="ri-close-fill"></i>    
+            </div>
+            <hr>
+            <ul id="cart-items">
+                
+            </ul>
+            <p id="total-price">All : $0</p>
+            <div class="gombok">
+                <button id="clear-cart">Empty cart</button>
+                <button ><a href="#">Check Out</a></button>
+            </div>
+        </div>
 		<main class="main">
-			<header class="header" id="header">
-                <nav class="nav container">
-                    <a href="#" class="nav__logo logo1">
-                        E-Motion
-                    </a>
-                    <div class="nav__menu" id="nav-menu">
-                        <ul class="nav__list">
-                            <li class="nav__item">
-                                <a href="#home" class="nav__link active-link">
-                                    Home
-                                </a>
-                            </li>
-                            <li class="nav__item">
-                                <a href="#about" class="nav__link">
-                                    About
-                                </a>
-                            </li>
-                            <li class="nav__item">
-                                <a href="#popular" class="nav__link">
-                                    Popular
-                                </a>
-                            </li>
-                            <li class="nav__item">
-                                <a href="#featured" class="nav__link">
-                                    Featured
-                                </a>
-                            </li>
-                            <li class="nav__item">
-                                <a href="account.html" target="_blank" class="nav__link">
-                                    Account 
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="nav__close" id="nav-close">
-                            <i class="ri-close-line"></i>
+			<section class="home section" id="home">
+                <div class="shape shape__big"></div>
+                <div class="shape shape__small"></div>
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <h1 class="h1__title">
+                            Choose The Best Car
+                        </h1>
+                        <h2 class="home__subtitle">
+                            Porsche Mission E
+                        </h2>
+                        <h3 class="home__elec">
+                            <i class="ri-flashlight-fill"></i> Electric car
+                        </h3>
+                    </div>
+                    <img src="images/home.png" alt="" class="home__img">
+                    <div class="home__car">
+                        <div class="home__car-data">
+                            <div class="home__car-icon">
+                                <i class="ri-temp-cold-line"></i>
+                            </div>
+                            <h2 class="home__car-number">24°</h2>
+                            <h3 class="home__car-name">TEMPERATURE</h3>
+                        </div>
+                        <div class="home__car-data">
+                            <div class="home__car-icon">
+                                <i class="ri-dashboard-3-line"></i>
+                            </div>
+                            <h2 class="home__car-number">873</h2>
+                            <h3 class="home__car-name">MILEAGE</h3>
+                        </div>
+                        <div class="home__car-data">
+                            <div class="home__car-icon">
+                                <i class="ri-flashlight-fill"></i>
+                            </div>
+                            <h2 class="home__car-number">94%</h2>
+                            <h3 class="home__car-name">BATTERY</h3>
                         </div>
                     </div>
-                    <div class="nav__cart-1 cart">
-                        <ul class="nav__list">
-                            <li class="nav__item">
-                                <div id="cart-icon">
-                                    <i class="ri-shopping-cart-2-line"></i>
-                                </div>
-                                <span id="cart-count">0</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="#" class="nav__logo logo2">
-                        E-Motion
-                    </a>
-                    <div class="nav__toggle cart">
-                        <ul class="toggle__ul">
-                            <li>
-                                <i class="ri-menu-line" id="nav-toggle"></i>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
+                    <a href="#" class="home__button">START</a>
+                </div>
+            </section>
 		</main>
-		    <section class="home section" id="home">
-	                <div class="shape shape__big"></div>
-	                <div class="shape shape__small"></div>
-	                <div class="home__container container grid">
-	                    <div class="home__data">
-	                        <h1 class="h1__title">
-	                            Choose The Best Car
-	                        </h1>
-	                        <h2 class="home__subtitle">
-	                            Porsche Mission E
-	                        </h2>
-	                        <h3 class="home__elec">
-	                            <i class="ri-flashlight-fill"></i> Electric car
-	                        </h3>
-	                    </div>
-	                    <img src="images/home.png" alt="" class="home__img">
-	                    <div class="home__car">
-	                        <div class="home__car-data">
-	                            <div class="home__car-icon">
-	                                <i class="ri-temp-cold-line"></i>
-	                            </div>
-	                            <h2 class="home__car-number">24°</h2>
-	                            <h3 class="home__car-name">TEMPERATURE</h3>
-	                        </div>
-	                        <div class="home__car-data">
-	                            <div class="home__car-icon">
-	                                <i class="ri-dashboard-3-line"></i>
-	                            </div>
-	                            <h2 class="home__car-number">873</h2>
-	                            <h3 class="home__car-name">MILEAGE</h3>
-	                        </div>
-	                        <div class="home__car-data">
-	                            <div class="home__car-icon">
-	                                <i class="ri-flashlight-fill"></i>
-	                            </div>
-	                            <h2 class="home__car-number">94%</h2>
-	                            <h3 class="home__car-name">BATTERY</h3>
-	                        </div>
-	                    </div>
-	                    <a href="#" class="home__button">START</a>
-	                </div>
-	            </section>
-	            <section class="about section" id="about">
-	                <div class="about__container container grid">
-	                    <div class="about__group">
-	                        <img src="images/about.png" alt="" class="about__img">
-	                        <div class="about__card">
-	                            <h3 class="about__card-title">2.500+</h3>
-	                            <p class="about__card-description">
-	                                Supercharges placed along popular routes
-	                            </p>
-	                        </div>
-	                    </div>
-	                    <div class="about__data">
-	                        <h2 class="section__title about__title">
-	                            Machines With <br> Future Technology
-	                        </h2>
-	                        <p class="about__description">
-	                            See the future with high-performance electric cars produced by 
-	                            renowned brands. They feature futuristic builds and designs with 
-	                            new and innovative platforms that last a long time.
-	                        </p>
-	                        <a href="#" class="button">Know more</a>
-	                    </div>
-	                </div>
-	            </section>
-	            <section class="popular section" id="popular">
-	                <h2 class="section__title">
-	                    Choose Your Electric Car <br> Of The Porsche Brand
-	                </h2>
-	                <div class="popular__container container swiper">
-	                    <div class="swiper-wrapper product">
-	                        <article class="popular__card swiper-slide listProduct product">
-	                            <div class="shape shape__smaller"></div>
-	                            <h1 class="popular__title">Porsche</h1>
-	                            <h3 class="popular__subtitle">Turbo S</h3>
-	                            <img src="images/popular1.png" alt="" class="popular__img product-img">
-	                            <div class="popular__data">
-	                                <div class="popular__data-group">
-	                                    <i class="ri-dashboard-3-line"></i> 3.7 Sec
-	                                </div>
-	                                <div class="popular__data-group">
-	                                    <i class="ri-funds-box-line"></i> 356 Km/h
-	                                </div>
-	                                <div class="popular__data-group">
-	                                    <i class="ri-charging-pile-2-line"></i> Electric
-	                                </div>
-	                            </div>
-	                            <h3 class="popular__price price">$175,900</h3>
-	                            <button class="button popular__button" onclick="addToCart('Porsche Turbo S', 175900, 'images/popular1.png')">
-	                                <i class="ri-shopping-bag-2-line"></i>
-	                            </button>
-	                        </article>
-	                        <article class="popular__card swiper-slide listProduct product">
-	                            <div class="shape shape__smaller"></div>
-	                            <h1 class="popular__title">Porsche</h1>
-	                            <h3 class="popular__subtitle">Taycan</h3>
-	                            <img src="images/popular2.png" alt="" class="popular__img product-img">
-	                            <div class="popular__data">
-	                                <div class="popular__data-group">
-	                                    <i class="ri-dashboard-3-line"></i> 3.7 Sec
-	                                </div>
-	                                <div class="popular__data-group">
-	                                    <i class="ri-funds-box-line"></i> 356 Km/h
-	                                </div>
-	                                <div class="popular__data-group">
-	                                    <i class="ri-charging-pile-2-line"></i> Electric
-	                                </div>
-	                            </div>
-	                            <h3 class="popular__price price">$114,900</h3>
-	                            <button class="button popular__button" onclick="addToCart('Porsche Taycan', 114900, 'images/popular2.png')">
-	                                <i class="ri-shopping-bag-2-line"></i>
-	                            </button>
-	                        </article>
-	                        <article class="popular__card swiper-slide listProduct product">
-	                            <div class="shape shape__smaller"></div>
-	                            <h1 class="popular__title">Porsche</h1>
-	                            <h3 class="popular__subtitle">Turbo S Cross</h3>
-	                            <img src="images/popular3.png" alt="" class="popular__img product-img">
-	                            <div class="popular__data">
-	                                <div class="popular__data-group">
-	                                    <i class="ri-dashboard-3-line"></i> 3.7 Sec
-	                                </div>
-	                                <div class="popular__data-group">
-	                                    <i class="ri-funds-box-line"></i> 356 Km/h
-	                                </div>
-	                                <div class="popular__data-group">
-	                                    <i class="ri-charging-pile-2-line"></i> Electric
-	                                </div>
-	                            </div>
-	                            <h3 class="popular__price price">$150,900</h3>
-	                            <button class="button popular__button" onclick="addToCart('Porsche Turbo S Cross', 150900, 'images/popular3.png')">
-	                                <i class="ri-shopping-bag-2-line"></i>
-	                            </button>
-	                        </article>
-	                        <article class="popular__card swiper-slide listProduct product">
-	                            <div class="shape shape__smaller"></div>
-	                            <h1 class="popular__title">Porsche</h1>
-	                            <h3 class="popular__subtitle">Boxster 718</h3>
-	                            <img src="images/popular4.png" alt="" class="popular__img product-img">
-	                            <div class="popular__data">
-	                                <div class="popular__data-group">
-	                                    <i class="ri-dashboard-3-line"></i> 3.7 Sec
-	                                </div>
-	                                <div class="popular__data-group">
-	                                    <i class="ri-funds-box-line"></i> 356 Km/h
-	                                </div>
-	                                <div class="popular__data-group">
-	                                    <i class="ri-charging-pile-2-line"></i> Electric
-	                                </div>
-	                            </div>
-	                            <h3 class="popular__price price">$125,900</h3>
-	                            <button class="button popular__button" onclick="addToCart('Porsche Boxster 718', 125900, 'images/popular4.png')">
-	                                <i class="ri-shopping-bag-2-line"></i>
-	                            </button>
-	                        </article>
-	                        <article class="popular__card swiper-slide listProduct product">
-	                            <div class="shape shape__smaller"></div>
-	                            <h1 class="popular__title">Porsche</h1>
-	                            <h3 class="popular__subtitle">Cayman</h3>
-	                            <img src="images/popular5.png" alt="" class="popular__img product-img">
-	                            <div class="popular__data">
-	                                <div class="popular__data-group">
-	                                    <i class="ri-dashboard-3-line"></i> 3.7 Sec
-	                                </div>
-	                                <div class="popular__data-group">
-	                                    <i class="ri-funds-box-line"></i> 356 Km/h
-	                                </div>
-	                                <div class="popular__data-group">
-	                                    <i class="ri-charging-pile-2-line"></i> Electric
-	                                </div>
-	                            </div>
-	                            <h3 class="popular__price price">$128,900</h3>
-	                            <button class="button popular__button" onclick="addToCart('Porsche Cayman', 128900, 'images/popular5.png')">
-	                                <i class="ri-shopping-bag-2-line"></i>
-	                            </button>
-	                        </article>
-	                    </div>
-	                    <div class="swiper-pagination"></div>
-	                </div>
-	            </section>
 		<script src="js/scrollreveal.min.js"></script>
         <script src="js/swiper-bundle.min.js"></script>
         <script src="js/mixitup.min.js"></script>
