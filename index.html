@@ -125,7 +125,7 @@
                             <h3 class="home__car-name">BATTERY</h3>
                         </div>
                     </div>
-                    <a href="#" class="home__button">START</a>
+                    <a href="#" id="stop" data-audio="Funny Turtle Vine, Panting.mp3" class="home__button" onmousedown="bleep.play()">START</a>
                 </div>
             </section>
             <section class="about section" id="about">
@@ -412,7 +412,7 @@
                 </div>
             </section>
         </main>
-        <footer class="footer section">
+                <footer class="footer section">
             <div class="shape shape__big"></div>
             <div class="shape shape__small"></div>
             <div class="footer__container container grid">
@@ -488,6 +488,27 @@
         <a href="#" class="scrollup" id="scroll-up">
             <i class="ri-arrow-up-line"></i>
         </a>
+        <script>
+            var bleep = new Audio(); // Az audio objektum
+            bleep.src = "Funny Turtle Vine, Panting.mp3"; // A fájl elérési útja
+    
+            // Kattintások számolása
+            var clickCount = 0;
+    
+            function toggleAudio() {
+                clickCount++; // Minden kattintás növeli a számlálót
+    
+                // Ha a hang szól, akkor leállítjuk
+                if (!bleep.paused) {
+                    bleep.pause(); // Leállítjuk a hangot
+                    bleep.currentTime = 0; // Visszaállítjuk a hangot az elejére
+                } else {
+                    // Ha a hang nem szól, elindítjuk
+                    bleep.play(); // Elindítjuk a hangot
+                }
+    
+            }
+        </script>
 		<script src="js/scrollreveal.min.js"></script>
         <script src="js/swiper-bundle.min.js"></script>
         <script src="js/mixitup.min.js"></script>
