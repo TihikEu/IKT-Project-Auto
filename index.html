@@ -11,7 +11,7 @@
         <title>E-Motion - Home</title>
     </head>
     <body>
-        <header class="header" id="header">
+		<header class="header" id="header">
             <nav class="nav container">
                 <a href="#" class="nav__logo logo1">
                     E-Motion
@@ -73,11 +73,11 @@
         <div id="cart-container">
             <div class="cart__close">
                 <h2>Cart</h2>
-                <i id="close-cart" class="ri-close-fill"></i>    
+                <i id="close-cart" class="ri-close-fill"></i>
             </div>
             <hr>
             <ul id="cart-items">
-                
+                <!-- Kosár tartalom itt jelenik meg -->
             </ul>
             <p id="total-price">All : $0</p>
             <div class="gombok">
@@ -85,8 +85,8 @@
                 <button ><a href="#">Check Out</a></button>
             </div>
         </div>
-		<main class="main">
-			<section class="home section" id="home">
+        <main class="main">
+            <section class="home section" id="home">
                 <div class="shape shape__big"></div>
                 <div class="shape shape__small"></div>
                 <div class="home__container container grid">
@@ -128,7 +128,290 @@
                     <a href="#" class="home__button">START</a>
                 </div>
             </section>
-		</main>
+            <section class="about section" id="about">
+                <div class="about__container container grid">
+                    <div class="about__group">
+                        <img src="images/about.png" alt="" class="about__img">
+                        <div class="about__card">
+                            <h3 class="about__card-title">2.500+</h3>
+                            <p class="about__card-description">
+                                Supercharges placed along popular routes
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about__data">
+                        <h2 class="section__title about__title">
+                            Machines With <br> Future Technology
+                        </h2>
+                        <p class="about__description">
+                            See the future with high-performance electric cars produced by 
+                            renowned brands. They feature futuristic builds and designs with 
+                            new and innovative platforms that last a long time.
+                        </p>
+                        <a href="#" class="button">Know more</a>
+                    </div>
+                </div>
+            </section>
+            <section class="popular section" id="popular">
+                <h2 class="section__title">
+                    Choose Your Electric Car <br> Of The Porsche Brand
+                </h2>
+                <div class="popular__container container swiper">
+                    <div class="swiper-wrapper product">
+                        <article class="popular__card swiper-slide listProduct product">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="popular__title">Porsche</h1>
+                            <h3 class="popular__subtitle">Turbo S</h3>
+                            <img src="images/popular1.png" alt="" class="popular__img product-img">
+                            <div class="popular__data">
+                                <div class="popular__data-group">
+                                    <i class="ri-dashboard-3-line"></i> 3.7 Sec
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-funds-box-line"></i> 356 Km/h
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-charging-pile-2-line"></i> Electric
+                                </div>
+                            </div>
+                            <h3 class="popular__price price">$175,900</h3>
+                            <button class="button popular__button" onclick="addToCart('Porsche Turbo S', 175900, 'images/popular1.png')">
+                                <i class="ri-shopping-bag-2-line"></i>
+                            </button>
+                        </article>
+                        <article class="popular__card swiper-slide listProduct product">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="popular__title">Porsche</h1>
+                            <h3 class="popular__subtitle">Taycan</h3>
+                            <img src="images/popular2.png" alt="" class="popular__img product-img">
+                            <div class="popular__data">
+                                <div class="popular__data-group">
+                                    <i class="ri-dashboard-3-line"></i> 3.7 Sec
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-funds-box-line"></i> 356 Km/h
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-charging-pile-2-line"></i> Electric
+                                </div>
+                            </div>
+                            <h3 class="popular__price price">$114,900</h3>
+                            <button class="button popular__button" onclick="addToCart('Porsche Taycan', 114900, 'images/popular2.png')">
+                                <i class="ri-shopping-bag-2-line"></i>
+                            </button>
+                        </article>
+                        <article class="popular__card swiper-slide listProduct product">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="popular__title">Porsche</h1>
+                            <h3 class="popular__subtitle">Turbo S Cross</h3>
+                            <img src="images/popular3.png" alt="" class="popular__img product-img">
+                            <div class="popular__data">
+                                <div class="popular__data-group">
+                                    <i class="ri-dashboard-3-line"></i> 3.7 Sec
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-funds-box-line"></i> 356 Km/h
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-charging-pile-2-line"></i> Electric
+                                </div>
+                            </div>
+                            <h3 class="popular__price price">$150,900</h3>
+                            <button class="button popular__button" onclick="addToCart('Porsche Turbo S Cross', 150900, 'images/popular3.png')">
+                                <i class="ri-shopping-bag-2-line"></i>
+                            </button>
+                        </article>
+                        <article class="popular__card swiper-slide listProduct product">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="popular__title">Porsche</h1>
+                            <h3 class="popular__subtitle">Boxster 718</h3>
+                            <img src="images/popular4.png" alt="" class="popular__img product-img">
+                            <div class="popular__data">
+                                <div class="popular__data-group">
+                                    <i class="ri-dashboard-3-line"></i> 3.7 Sec
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-funds-box-line"></i> 356 Km/h
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-charging-pile-2-line"></i> Electric
+                                </div>
+                            </div>
+                            <h3 class="popular__price price">$125,900</h3>
+                            <button class="button popular__button" onclick="addToCart('Porsche Boxster 718', 125900, 'images/popular4.png')">
+                                <i class="ri-shopping-bag-2-line"></i>
+                            </button>
+                        </article>
+                        <article class="popular__card swiper-slide listProduct product">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="popular__title">Porsche</h1>
+                            <h3 class="popular__subtitle">Cayman</h3>
+                            <img src="images/popular5.png" alt="" class="popular__img product-img">
+                            <div class="popular__data">
+                                <div class="popular__data-group">
+                                    <i class="ri-dashboard-3-line"></i> 3.7 Sec
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-funds-box-line"></i> 356 Km/h
+                                </div>
+                                <div class="popular__data-group">
+                                    <i class="ri-charging-pile-2-line"></i> Electric
+                                </div>
+                            </div>
+                            <h3 class="popular__price price">$128,900</h3>
+                            <button class="button popular__button" onclick="addToCart('Porsche Cayman', 128900, 'images/popular5.png')">
+                                <i class="ri-shopping-bag-2-line"></i>
+                            </button>
+                        </article>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+            <section class="features section">
+                <h2 class="section__title">
+                    More Features
+                </h2>
+                <div class="features__container container grid">
+                    <div class="features__group">
+                        <img src="images/features.png" alt="" class="features__img">
+                        <div class="features__card features__card-1">
+                            <h3 class="features__card-title">800v</h3>
+                            <p class="features__card-description">Turbo <br> Chargin</p></p>
+                        </div>
+                        <div class="features__card features__card-2">
+                            <h3 class="features__card-title">350</h3>
+                            <p class="features__card-description">Km <br> Range</p>
+                        </div>
+                        <div class="features__card features__card-3">
+                            <h3 class="features__card-title">480</h3>
+                            <p class="features__card-description">Km <br> Travel</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="featured section" id="featured">
+                <h2 class="section__title">
+                    Featured Luxury Cars
+                </h2>
+                <div class="featured__container container">
+                    <ul class="featured__filters">
+                        <li>
+                            <button class="featured__item active-featured" data-filter="all">
+                                <span>All</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="featured__item" data-filter=".tesla">
+                                <img src="images/logo3.png" alt="">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="featured__item" data-filter=".audi">
+                                <img src="images/logo2.png" alt="">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="featured__item" data-filter=".porsche">
+                                <img src="images/logo1.png" alt="">
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="featured__content grid product">
+                        <article class="featured__card mix tesla listProduct product">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="featured__title">Tesla</h1>
+                            <h3 class="featured__subtitle">Model X</h3>
+                            <img src="images/featured1.png" alt="" class="product-img featured__img">
+                            <h3 class="featured__price price">$98,900</h3>
+                            <button class="button featured__button" onclick="addToCart('Tesla Model X', 98900, 'images/featured1.png')">
+                                <i class="ri-shopping-bag-2-line"></i>
+                            </button>
+                        </article>
+                        <article class="featured__card mix tesla listProduct product">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="featured__title">Tesla</h1>
+                            <h3 class="featured__subtitle">Model 3</h3>
+                            <img src="images/featured2.png" alt="" class="featured__img product-img">
+                            <h3 class="featured__price price">$45,900</h3>
+                            <button class="button featured__button" onclick="addToCart('Tesla Model 3', 45900, 'images/featured2.png')">
+                                <i class="ri-shopping-bag-2-line"></i>
+                            </button>
+                        </article>
+                        <article class="featured__card mix audi listProduct product">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="featured__title">Audi</h1>
+                            <h3 class="featured__subtitle">E-tron</h3>
+                            <img src="images/featured3.png" alt="" class="featured__img product-img">
+                            <h3 class="featured__price price">$175,900</h3>
+                            <button class="button featured__button" onclick="addToCart('Audi E-Tron', 175900, 'images/featured3.png')">
+                                <i class="ri-shopping-bag-2-line"></i>
+                            </button>
+                        </article>
+                        <article class="featured__card mix porsche listProduct product">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="featured__title">Porsche</h1>
+                            <h3 class="featured__subtitle">Boxster 987</h3>
+                            <img src="images/featured4.png" alt="" class="featured__img product-img">
+                            <h3 class="featured__price price">$126,900</h3>
+                            <button class="button featured__button" onclick="addToCart('Porsche Boxster 987', 126900, 'images/featured4.png')">
+                                <i class="ri-shopping-bag-2-line"></i>
+                            </button>
+                        </article>
+                        <article class="featured__card mix porsche listProduct product">
+                            <div class="shape shape__smaller"></div>
+                            <h1 class="featured__title">Porsche</h1>
+                            <h3 class="featured__subtitle">Panamera</h3>
+                            <img src="images/featured5.png" alt="" class="featured__img product-img">
+                            <h3 class="featured__price price">$126,900</h3>
+                            <button class="button featured__button" onclick="addToCart('Porsche Panamera', 126900, 'images/featured5.png')">
+                                <i class="ri-shopping-bag-2-line"></i>
+                            </button>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="offer section">
+                <div class="offer__container container grid">
+                    <img src="images/offer-bg.png" alt="" class="offer__bg">
+                    <div class="offer__data">
+                        <h2 class="section__title offer__title">
+                            Do You Want To Receive <br> Special Offers?
+                        </h2>
+                        <p class="offer__description">
+                            Be the first to receive all the information about our 
+                            products and new cars by email by subscribing to our 
+                            mailing list.
+                        </p>
+                        <a href="account.html" class="button">
+                            Subscribe Now
+                        </a>
+                    </div>
+                    <img src="images/offer.png" alt="" class="offer__img">
+                </div>
+            </section>
+            <section class="logos section">
+                <div class="logos__container container grid">
+                    <div class="logod__content">
+                        <img src="images/logo1.png" alt="" class="logos__img">
+                    </div>
+                    <div class="logod__content">
+                        <img src="images/logo2.png" alt="" class="logos__img">
+                    </div>
+                    <div class="logod__content">
+                        <img src="images/logo3.png" alt="" class="logos__img">
+                    </div>
+                    <div class="logod__content">
+                        <img src="images/logo4.png" alt="" class="logos__img">
+                    </div>
+                    <div class="logod__content">
+                        <img src="images/logo5.png" alt="" class="logos__img">
+                    </div>
+                    <div class="logod__content">
+                        <img src="images/logo6.png" alt="" class="logos__img">
+                    </div>
+                </div>
+            </section>
+        </main>
 		<script src="js/scrollreveal.min.js"></script>
         <script src="js/swiper-bundle.min.js"></script>
         <script src="js/mixitup.min.js"></script>

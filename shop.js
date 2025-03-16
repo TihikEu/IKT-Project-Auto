@@ -1,4 +1,6 @@
+
 let cart = [];
+
 function addToCart(name, price, image) {
     const existingItem = cart.find(item => item.name === name);
     if (existingItem) {
@@ -8,6 +10,7 @@ function addToCart(name, price, image) {
     }
     updateCart();
 }
+
 function updateCart() {
     const cartItems = document.getElementById('cart-items');
     const cartCount = document.getElementById('cart-count');
@@ -38,18 +41,22 @@ function updateCart() {
     totalPriceElement.textContent = `All : $${totalPrice}`;
     cartCount.textContent = cart.length;
 }
+
 document.getElementById('clear-cart').addEventListener('click', () => {
     cart = [];
     updateCart();
 });
+
 document.getElementById('close-cart').addEventListener('click', () => {
     const cartContainer = document.getElementById('cart-container');
     cartContainer.classList.remove('open');
 });
+
 document.getElementById('cart-icon').addEventListener('click', () => {
     const cartContainer = document.getElementById('cart-container');
     cartContainer.classList.toggle('open');
 });
+
 function removeFromCart(name) {
     cart = cart.filter(item => item.name !== name);
     updateCart();
@@ -66,3 +73,5 @@ function changeQuantity(name, change) {
         }
     }
 }
+
+
